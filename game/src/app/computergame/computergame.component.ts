@@ -43,6 +43,6 @@ export class ComputergameComponent implements OnInit {
     this.playersform.value.player1image=this.selectedimage
     this.playersform.value.player2image = 
     this.ser.details=this.playersform.value;
-    this.router.navigate(['/startgame']);
+    this.router.navigate(['/playwithcomputer']);
   }
 }
