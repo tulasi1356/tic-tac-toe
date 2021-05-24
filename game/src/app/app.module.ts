@@ -10,12 +10,14 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StartfriendgameComponent } from './startfriendgame/startfriendgame.component';
+import { ComputergameComponent } from './computergame/computergame.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     FriendgameComponent,
-    StartfriendgameComponent
+    StartfriendgameComponent,
+    ComputergameComponent
   ],
   imports: [
     BrowserModule,

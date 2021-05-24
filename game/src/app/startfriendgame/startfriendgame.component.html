@@ -1,23 +1,39 @@
-<!-- <p>startfriendgame works!</p> -->
-
-<div *ngIf="!gameend">
-    <div class="button1">
-        <button (click)="action(0,0,0)" [ngStyle]="{'background-color':colorarray[0]}" >1</button>
-        <button (click)="action(0,1,1)" [ngStyle]="{'background-color':colorarray[1]}">2</button>
-        <button (click)="action(0,2,2)" [ngStyle]="{'background-color':colorarray[2]}">3</button>
-    </div>
-    <div class="button2">
-        <button (click)="action(1,0,3)" [ngStyle]="{'background-color':colorarray[3]}">4</button>
-        <button (click)="action(1,1,4)" [ngStyle]="{'background-color':colorarray[4]}">5</button>
-        <button (click)="action(1,2,5)" [ngStyle]="{'background-color':colorarray[5]}">6</button>
-    </div>
-    <div class="button3">
-        <button (click)="action(2,0,6)" [ngStyle]="{'background-color':colorarray[6]}">7</button>
-        <button (click)="action(2,1,7)" [ngStyle]="{'background-color':colorarray[7]}">8</button>
-        <button (click)="action(2,2,8)" [ngStyle]="{'background-color':colorarray[8]}">9</button>
-    </div>
+<div  *ngIf="!gameend" class="main-content">
+    <!-- <p>startfriendgame works!</p> -->
+<!-- <img src="" -->
+<div class="player1">
+    <img src="{{playerdetails.player1image}}" width="500px" height="500px">
 </div>
-<div *ngIf="gameend">
-    <img src="../../assets/congrats.gif">
-       <b>{{player}}</b>
+<div class="tic-tac-toe">
+    <div>
+        <div class="button1">
+            <button (click)="action(0,0,0)" [ngStyle]="{'background-color':colorarray[0]}" >1</button>
+            <button (click)="action(0,1,1)" [ngStyle]="{'background-color':colorarray[1]}">2</button>
+            <button (click)="action(0,2,2)" [ngStyle]="{'background-color':colorarray[2]}">3</button>
+        </div>
+        <div class="button2">
+            <button (click)="action(1,0,3)" [ngStyle]="{'background-color':colorarray[3]}">4</button>
+            <button (click)="action(1,1,4)" [ngStyle]="{'background-color':colorarray[4]}">5</button>
+            <button (click)="action(1,2,5)" [ngStyle]="{'background-color':colorarray[5]}">6</button>
+        </div>
+        <div class="button3">
+            <button (click)="action(2,0,6)" [ngStyle]="{'background-color':colorarray[6]}">7</button>
+            <button (click)="action(2,1,7)" [ngStyle]="{'background-color':colorarray[7]}">8</button>
+            <button (click)="action(2,2,8)" [ngStyle]="{'background-color':colorarray[8]}">9</button>
+        </div>
+    </div>
+
+</div>
+<div class="player2">
+    <img src="{{playerdetails.player2image}}" width="500px" height="500px">
+</div>
+</div>
+<div *ngIf="gameend" class="ending">
+   <div class="image-part">
+    <img src="{{winnerimage}}" width="500px" height="500px">
+   </div>
+   <div class="winner">
+    <b>{{player}}</b>
+
+   </div>
 </div>

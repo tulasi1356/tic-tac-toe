@@ -1,3 +1,12 @@
+.main-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.ending {
+    display: flex;
+    align-items: center;
+}
 button {
     padding: 40px;
 }

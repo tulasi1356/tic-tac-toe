@@ -1,22 +1,31 @@
 import { Component, OnInit } from '@angular/core';
-
+import {FriendsService} from '../friends.service';
 @Component({
   selector: 'app-startfriendgame',
   templateUrl: './startfriendgame.component.html',
   styleUrls: ['./startfriendgame.component.scss']
 })
 export class StartfriendgameComponent implements OnInit {
-  public player1="TULASI";
-  public player2="Dileep";
+  public player1:any;
+  public player2:any;
   public start=true;
   public gameend=false;
+  public playerdetails:any;
   public multi:number[][] = [[0,0,0],[0,0,0],[0,0,0]]  
-  constructor() { }
+  constructor(private ser:FriendsService) {
+    this.playerdetails=this.ser.details;
+    this.player1=this.playerdetails.player1;
+    this.player2=this.playerdetails.player2;
+    // let audio1 = new Audio();
+    // audio1.src = "../../assets/Dynamite - BTS.mp3.crdownload";
+    // audio1.play();
+   }
 
   ngOnInit(): void {
   }
   public player: any;
   public count=0
+  public winnerimage:any;
   public color:any;
   public colorarray=['','','','','','','','','']
   action(x:any,y:any,z:any) {
@@ -24,17 +33,18 @@ export class StartfriendgameComponent implements OnInit {
     if(this.multi[x][y]==0) {
       if(this.start) {
         this.player=this.player1
+        this.winnerimage=this.playerdetails.player1image
         this.colorarray[z]="pink"
       }
      
       else {
   
         this.player=this.player2
+        this.winnerimage=this.playerdetails.player2image
         this.colorarray[z]="blue"
   
       }
       this.multi[x][y]=this.player
-
       console.log('multi',this.multi)
       this.start=!this.start
       this.count++;
@@ -64,7 +74,7 @@ export class StartfriendgameComponent implements OnInit {
           this.gameend=true
         }
       }
-      if(this.count==9) {
+      if(this.count==9 && !this.gameend) {
         this.player="Both of loss the game"
         this.gameend=true
       }

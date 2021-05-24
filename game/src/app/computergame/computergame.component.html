@@ -1,0 +1,27 @@
+<!-- <p>computergame works!</p> -->
+
+<div class="entireclass">
+    <div class="main-content">
+        <div class="players">
+            <button (click)="previous()"><</button>
+            <img src="{{selectedimage}}" width="300px" height="300px">
+            <button (click)="next()"> > </button>
+        </div>
+        <div class="form">
+            <form [formGroup]="playersform" (ngSubmit)="Onsubmit()">
+                <mat-form-field appearance="outline" class="example-full-width">
+                    <mat-label class="label">Player1</mat-label>
+                    <input matInput class="textbox" formControlName="player1">
+                </mat-form-field>
+                <br>
+                <br>
+                <button>Submit</button>
+            </form>
+        </div>
+        <div class="players">
+            <!-- <button (click)="previous()"><</button> -->
+            <img src="../../assets/computer.jpg" width="300px" height="300px">
+            <!-- <button (click)="next()"> > </button> -->
+        </div>
+    </div>
+    </div>

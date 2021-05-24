@@ -14,4 +14,7 @@ export class HomeComponent implements OnInit {
   friend() {
     this.router.navigate(['/friends']);
   }
+  computer() {
+    this.router.navigate(['/computergame']);
+  }
 }
