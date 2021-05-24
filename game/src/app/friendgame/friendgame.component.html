@@ -1,3 +1,29 @@
 <div class="entireclass">
-    
+<div class="main-content">
+    <div class="players">
+        <button (click)="previous()"><</button>
+        <img src="{{selectedimage}}" width="300px" height="300px">
+        <button (click)="next()"> > </button>
+    </div>
+    <div class="form">
+        <form [formGroup]="playersform" (ngSubmit)="Onsubmit()">
+            <mat-form-field appearance="outline" class="example-full-width">
+                <mat-label class="label">Player1</mat-label>
+                <input matInput class="textbox" formControlName="player1">
+            </mat-form-field>
+            <br>
+            <mat-form-field appearance="outline" class="example-full-width">
+                <mat-label class="label">Player2</mat-label>
+                <input matInput class="textbox"  formControlName="player2">
+            </mat-form-field>
+            <br>
+            <button>Submit</button>
+        </form>
+    </div>
+    <div class="players">
+        <button (click)="previous1()"><</button>
+        <img src="{{selectedimage1}}" width="300px" height="300px">
+        <button (click)="next1()"> > </button>
+    </div>
+</div>
 </div>

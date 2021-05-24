@@ -6,18 +6,27 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FriendgameComponent } from './friendgame/friendgame.component';
-
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { StartfriendgameComponent } from './startfriendgame/startfriendgame.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    FriendgameComponent
+    FriendgameComponent,
+    StartfriendgameComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MatButtonModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule,
+     ReactiveFormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
