@@ -32,6 +32,7 @@ export class StartcomputergameComponent implements OnInit {
     }
     let z=x*3+y
     this.player=this.player2
+    // console.log(this.player,'**********************')
     this.multi[x][y]=this.player
     
     this.colorarray[z]="blue"
@@ -42,6 +43,7 @@ export class StartcomputergameComponent implements OnInit {
     if(this.multi[x][y]==0) {
       if(this.start) {
         this.player=this.player1
+        // console.log('************',this.player)
         this.colorarray[z]="pink"
         this.multi[x][y]=this.player
         this.start=!this.start
@@ -54,25 +56,26 @@ export class StartcomputergameComponent implements OnInit {
         for (let i = 0; i < 3; i++) {
           if((this.multi[i][0]==this.multi[i][1]) && (this.multi[i][2]==this.multi[i][1]) && (this.multi[i][0]==this.multi[i][2]) && this.multi[i][0]!=0) {
             console.log("winner row")
-            this.player="winner is"+this.player
+
+            this.player="winner is"+this.multi[i][1]
             this.gameend=true
           }
         }
         for (let i = 0; i < 3; i++) {
           if((this.multi[0][i]==this.multi[1][i]) && (this.multi[0][i]==this.multi[2][i]) && (this.multi[1][i]==this.multi[2][i]) && this.multi[0][i]!=0) {
             console.log("winner col",this.player);
-            this.player="winner is"+this.player
+            this.player="winner is"+this.multi[1][i]
             this.gameend=true
           }
         }
         if((this.multi[0][0]==this.multi[1][1]) && (this.multi[0][0]==this.multi[2][2]) && (this.multi[1][1]==this.multi[2][2]) && this.multi[0][0]!=0 && this.multi[1][1]!=0 && this.multi[2][2]!=0) {
           console.log("winner diag",this.player);
-          this.player="winner is"+this.player
+          this.player="winner is"+this.multi[1][1]
           this.gameend=true
         }
         if((this.multi[0][2]==this.multi[1][1]) && (this.multi[0][2]==this.multi[2][0]) && (this.multi[1][1]==this.multi[2][0]) && this.multi[0][2]!=0 && this.multi[1][1]!=0 && this.multi[2][0]!=0) {
           console.log("winner diag",this.player);
-          this.player="winner is"+this.player
+          this.player="winner is"+this.multi[1][1]
           this.gameend=true
         }
       }
