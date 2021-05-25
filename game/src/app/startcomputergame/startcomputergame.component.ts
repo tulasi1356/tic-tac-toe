@@ -24,8 +24,8 @@ export class StartcomputergameComponent implements OnInit {
   ngOnInit(): void {
   }
   computeraction(prevx:any,prevy:any) {
-    this.xcordinate=prevx
-    if(prevx==0 && prevy==2) {
+    this.xcordinate=prevx 
+    if(prevx==0 && prevy== 2) {
       this.xcordinate=prevy
       this.ycordinate=prevx
     }
@@ -58,6 +58,7 @@ export class StartcomputergameComponent implements OnInit {
       else {
         this.xcordinate=prevx-1
       }
+
       if(this.multi[this.xcordinate][this.ycordinate]!=0){
         let max=2
         let min=0
