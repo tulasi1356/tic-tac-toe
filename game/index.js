@@ -11,9 +11,6 @@ app.use(cookieParser());
 
 app.use(express.static(path.join(__dirname,'/dist/game')))
 
-// app.get('/',function(req,res){
-//     res.send("it's working")
-// })
 app.get('/*',function(req,res){
     res.sendFile(__dirname+'/dist/game/index.html')
 })
